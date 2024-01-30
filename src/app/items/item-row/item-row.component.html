@@ -1,0 +1,8 @@
+<div
+  cdkDropList
+  [id]="status()"
+  (cdkDropListDropped)="drop($event)"
+  [cdkDropListData]="items()"
+>
+  <app-item-card *ngFor="let item of items()" [item]="item"></app-item-card>
+</div>

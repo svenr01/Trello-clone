@@ -1,0 +1,14 @@
+<section cdkDropListGroup *ngIf="items$ | async as items" id="card-wrapper">
+  <mat-card *ngFor="let status of orderedStatuses">
+    <mat-card-header>
+      <mat-card-title>{{ status }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <app-item-row
+        [status]="status"
+        [items]="items | filterItemRow : status"
+      ></app-item-row>
+    </mat-card-content>
+  </mat-card>
+</section>
